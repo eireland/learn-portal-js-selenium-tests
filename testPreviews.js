@@ -49,6 +49,67 @@ async function verifyMaterials(ksearch) {
       }
       pageNum++;
     };
+
+    //console.log("num of pages is "+lastNumPages);
+    //while (pageNum<=lastNumPages) {
+    //  console.log("page num is "+pageNum);
+    //  var materialNum = 0;
+    //  //2. Get a list of Preview buttons, and click it that many times css: '.button' with 'Preview' text
+    //  var numMaterials = ksearch.getNumMaterial();
+    //  var materialTitles = ksearch.getMaterialNames();
+    //  console.log("num materials length is "+numMaterials.length);
+    //  while (materialNum<=numMaterials.length-1) {
+    //    console.log("material num is "+materialNum);
+    //    (numMaterials[materialNum]).click();
+    //    portal.sleepWait(3000);
+    //    //3. For every preview, take a screenshot just to make sure page loads correctly.
+    //    var tabHandles = portal.getTabHandles();
+    //    portal.switchToTab(tabHandles[1]);
+    //    portal.sleepWait(3000);
+    //    var docTitle = materialTitles[materialNum];
+    //    portal.saveScreenshot(testScreenshotDir,docTitle);
+    //    portal.closeTab(tabHandles[1]);
+    //    portal.switchToTab(tabHandles[0]);
+    //    portal.sleepWait(3000);
+    //    materialNum++;
+    //  }
+    //  portal.sleepWait(3000);
+    //  if (pageNum<lastNumPages) {
+    //    portal.nextPage();
+    //    portal.sleepWait(2000);
+    //  }
+    //  pageNum++;
+    //};
+  //console.log("num of pages is "+lastNumPages);
+  //while (pageNum<=lastNumPages) {
+  //  console.log("page num is "+pageNum);
+  //  var materialNum = 0;
+  //  //2. Get a list of Preview buttons, and click it that many times css: '.button' with 'Preview' text
+  //  var numMaterials = ksearch.getNumMaterial();
+  //  var materialTitles = ksearch.getMaterialNames();
+  //  console.log("num materials length is "+numMaterials.length);
+  //  while (materialNum<=numMaterials.length-1) {
+  //    console.log("material num is "+materialNum);
+  //    (numMaterials[materialNum]).click();
+  //    portal.sleepWait(3000);
+  //    //3. For every preview, take a screenshot just to make sure page loads correctly.
+  //    var tabHandles = portal.getTabHandles();
+  //    portal.switchToTab(tabHandles[1]);
+  //    portal.sleepWait(3000);
+  //    var docTitle = materialTitles[materialNum];
+  //    portal.saveScreenshot(testScreenshotDir,docTitle);
+  //    portal.closeTab(tabHandles[1]);
+  //    portal.switchToTab(tabHandles[0]);
+  //    portal.sleepWait(3000);
+  //    materialNum++;
+  //  }
+  //  portal.sleepWait(3000);
+  //  if (pageNum<lastNumPages) {
+  //    portal.nextPage();
+  //    portal.sleepWait(2000);
+  //  }
+  //  pageNum++;
+  //}
 }
 
 portal.manageWindowSize(1680,1023);
@@ -69,4 +130,4 @@ verifyMaterials(searchPage);
 //searchPage.clickOnFilter('interactive');
 //portal.sleepWait(3000);
 //verifyMaterials(searchPage);
-portal.teardown();
+//portal.teardown();

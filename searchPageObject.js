@@ -68,10 +68,14 @@ class SearchPageObject extends BaseObject {
     await driver.findElement(NEXT_PAGE).click();
   }
 
-  async getNumMaterial () { //finds num of material by how many preview buttons there are
+  async getNumMaterial() { //finds num of material by how many preview buttons there are
     console.log('in get num material');
+    //var numMaterial= await driver.findElements(PREVIEW_BUTTON).then(function(materials) {
+    //  console.log("materials are "+materials);
+    //  return materials;
+    //});
     var numMaterial= await driver.findElements(PREVIEW_BUTTON);
-    console.log('numMaterial is '+numMaterial);
+    console.log('numMaterial is '+ numMaterial.length);
     return numMaterial;
   }
 
