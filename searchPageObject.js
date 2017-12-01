@@ -2,7 +2,7 @@ var BaseObject = require('./webdriverBase');
 var webdriver = require('selenium-webdriver'),
   By = webdriver.By,
   until = webdriver.until;
-//var driver;
+
 const   SEQUENCE_CHECKBOX = {id: 'investigation'},
   ACTIVITIES_CHECKBOX = {id: 'Activity'},
   INTERACTIVE_CHECKBOX = {id: 'Interactive'},

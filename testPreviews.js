@@ -1,5 +1,7 @@
-
-  var portal = require('./portalPagesObject');
+async function testPreviews()
+{
+  const portal = require('./portalPagesObject');
+  const searchPage = require('./searchPageObject');
 
   var url = 'https://learn.concord.org/search';
   var testScreenshotDir = "./test_screenshots/";
@@ -59,17 +61,19 @@
   portal.sleepWait(3000);
   searchPage.clickOnFilter('sequence');
   portal.sleepWait(5000);
-  verifyMaterials(searchPage);
+  await verifyMaterials(searchPage);
 
-  //searchPage.clickOnFilter('sequence');
-  //portal.sleepWait(3000);
-//searchPage.clickOnFilter('activity');
-//portal.sleepWait(3000);
-//verifyMaterials(searchPage);
-//searchPage.clickOnFilter('activity');
-//portal.sleepWait(3000);
-//searchPage.clickOnFilter('interactive');
-//portal.sleepWait(3000);
-//verifyMaterials(searchPage);
-//portal.teardown();
+  searchPage.clickOnFilter('sequence');
+  portal.sleepWait(3000);
+searchPage.clickOnFilter('activity');
+portal.sleepWait(3000);
+await verifyMaterials(searchPage);
+searchPage.clickOnFilter('activity');
+portal.sleepWait(3000);
+searchPage.clickOnFilter('interactive');
+portal.sleepWait(3000);
+await verifyMaterials(searchPage);
+portal.teardown();
+}
 
+testPreviews();
