@@ -22,12 +22,12 @@ class BaseObject {
       global.driver = driver;
   }
 
-  visit (url) {
-    driver.get(url);
+  async visit (url) {
+    await driver.get(url);
   }
 
-  manageWindowSize(width,height) {
-    driver.manage().window().setSize(width,height);
+  async manageWindowSize(width,height) {
+    await driver.manage().window().setSize(width,height);
   }
 
   maximizeWindowSize() {

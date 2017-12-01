@@ -3,7 +3,7 @@ var webdriver = require('selenium-webdriver'),
   By = webdriver.By,
   until = webdriver.until;
 //var driver;
-var   SEQUENCE_CHECKBOX = {id: 'investigation'},
+const   SEQUENCE_CHECKBOX = {id: 'investigation'},
   ACTIVITIES_CHECKBOX = {id: 'Activity'},
   INTERACTIVE_CHECKBOX = {id: 'Interactive'},
   RUNS_IN_BROWSER_CHECKBOX = {id: 'runs_in_browser'},
@@ -49,7 +49,7 @@ class SearchPageObject extends BaseObject {
 
    async getNumPages() {
     console.log("In get num pages");
-     var numTotal = await driver.findElement(TOTAL_NUM_MATERIALS).getText().then(function(totalMaterials){
+     var numTotal = driver.findElement(TOTAL_NUM_MATERIALS).getText().then(function(totalMaterials){
       var total = parseInt(totalMaterials);
       var guessPages = parseInt(total/10);
       var numPages = 0;
