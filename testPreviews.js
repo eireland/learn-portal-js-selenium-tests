@@ -58,22 +58,24 @@ async function testPreviews()
   portal.manageWindowSize(1680, 1023);
   portal.visit(url);
   searchPage.clickOnFilter('run in browser');
+
   portal.sleepWait(3000);
   searchPage.clickOnFilter('sequence');
   portal.sleepWait(5000);
   await verifyMaterials(searchPage);
-
   searchPage.clickOnFilter('sequence');
+
   portal.sleepWait(3000);
-searchPage.clickOnFilter('activity');
-portal.sleepWait(3000);
-await verifyMaterials(searchPage);
-searchPage.clickOnFilter('activity');
-portal.sleepWait(3000);
-searchPage.clickOnFilter('interactive');
-portal.sleepWait(3000);
-await verifyMaterials(searchPage);
-portal.teardown();
+  searchPage.clickOnFilter('activity');
+  portal.sleepWait(3000);
+  await verifyMaterials(searchPage);
+  searchPage.clickOnFilter('activity');
+
+  portal.sleepWait(3000);
+  searchPage.clickOnFilter('interactive');
+  portal.sleepWait(3000);
+  await verifyMaterials(searchPage);
+  portal.teardown();
 }
 
 testPreviews();
