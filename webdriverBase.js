@@ -44,6 +44,10 @@ class BaseObject {
     return driver.getTitle();
   }
 
+  async getCurrentUrl() {
+    return driver.getCurrentUrl();
+  }
+
   async find(locator){ //locator is JSON object of form {id:'selector'} ie.{className: "class_name"}, {css: "#div > input[type='checkbox']}
     await driver.findElement(locator);
   }
@@ -96,24 +100,27 @@ class BaseObject {
     });
   }
 
-  title() {
+  async title() {
     driver.getPageTitle().then(function(text) {console.log("Page title is " + text);});
   }
 
-  saveScreenshot(dir, pageTitle) {
+  saveScreenshot(dir, pageTitle, counter) {
     console.log("In page screenshot. Page title is " + pageTitle);
     var filename = pageTitle.replace(/[?\/\s]/g, '_');
-    if (filename.length > 15) {
-      var new_filename = filename.substr(0,15);
+    if (filename.length > 20) {
+      var new_filename = filename.substr(0,30);
       filename = new_filename;
     }
-    driver.takeScreenshot().then(this.writeScreenshot.bind(null, dir, filename));
+    filename = dir+filename+"_" +counter;
+
+    driver.takeScreenshot().then(this.writeScreenshot.bind(null,filename));
   }
 
-  writeScreenshot(dir, filename, data) {
+  writeScreenshot(filename, data) {
     console.log("in write screenshot");
+    console.log("filename is "+filename);
     var date = new Date().yyyymmdd() + ".png";
-    fs.writeFileSync(dir + "/" + filename + "_" + date, data, 'base64');
+    fs.writeFileSync(filename, data, 'base64');
   }
 
   //TODO: Need function for getting and writing browser logs
