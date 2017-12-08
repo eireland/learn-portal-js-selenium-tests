@@ -87,9 +87,9 @@ class SearchPageObject extends BaseObject {
       console.log("Material locations are " + materialLocations);
       var titles = [];
       for (var i = 0; i < materialLocations.length; i++) {
-        titles.push(materialLocations[i].attribute('data-material_name'));
+        titles.push(materialLocations[i].getAttribute('data-material_name'));
       };
-      console.log ("titles in then are " + titles);
+      console.log ("titles in them are " + titles);
       return titles
     });
 
