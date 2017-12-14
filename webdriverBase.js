@@ -62,7 +62,7 @@ class BaseObject {
   }
 
   async type(locator, input) {
-    var el = await driver.findElement(locator)
+    var el = await driver.findElement(locator);
     await el.clear();
     await el.sendKeys(input);
   }
@@ -103,6 +103,11 @@ class BaseObject {
   async title() {
     driver.getPageTitle().then(function(text) {console.log("Page title is " + text);});
   }
+
+  async submit_form(locator, input) {
+    await type(locator,input);
+    find(locator).sendKeys(driver.Keys.ENTER);
+}
 
   saveScreenshot(dir, pageTitle, counter) {
     console.log("In page screenshot. Page title is " + pageTitle);
